@@ -1,7 +1,7 @@
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
+#include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
+#include <cstring>
 #include "funcionario.h"
 
 bool verificarSenha(char user){
@@ -13,7 +13,7 @@ bool verificarSenha(char user){
             senhacorreta = "a1234"; // Senha predefinida para administrador
             break;
         case 'f':
-            senhacorreta = "f1234"; // Senha predefinida para funcion·rio
+            senhacorreta = "f1234"; // Senha predefinida para funcion√°rio
             
             break;
         case 'c':
@@ -103,7 +103,7 @@ void alterarF(int codigo){
  	Funcionario encontrado;
     int posicao = encontrarF(codigo, encontrado);
     if (posicao == -1) {
-        printf("funcionario n„o encontrado.\n");
+        printf("funcionario n√£o encontrado.\n");
         system("pause");
         return;
     }
@@ -146,7 +146,7 @@ void consultarF(int codigo){
 	Funcionario encontrado;
 	int posicao = encontrarF(codigo, encontrado);
 	if (posicao == -1){
-		printf("\tFuncionario n„o encontrado\n");
+		printf("\tFuncionario n√£o encontrado\n");
 		system("pause");
 		return;
 	}else{
