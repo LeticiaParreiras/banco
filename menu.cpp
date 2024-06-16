@@ -1,6 +1,6 @@
-#include <cstdio>
+#include <stdio.h>
 #include <conio.h>
-#include <cstdlib>
+#include <stdlib.h>
 #include "menu.h"
 #include "contas.h"
 #include "funcionario.h"
@@ -152,7 +152,7 @@ void menufuncionario() {
                         consultarcliente(aagencia,anumdeconta,tipo);
                         break;
                     default:
-                    	printf("OpÁ„o invalida");
+                    	printf("Op√ß√£o invalida");
                         break;
                 }
                 break;
@@ -188,7 +188,7 @@ void menufuncionario() {
 			                    alterarC(aagencia, anumdeconta);
 			                    break;
 			                default:
-			                    printf("Tipo de conta inv·lido.\n");
+			                    printf("Tipo de conta inv√°lido.\n");
 			                    break;
 			            }
 			            break;
@@ -216,7 +216,7 @@ void menufuncionario() {
                         alterarcliente(aagencia,anumdeconta,tipo);
 			           	break;
 			        default:
-	                    printf("Tipo de conta inv·lido.\n");
+	                    printf("Tipo de conta inv√°lido.\n");
 	                    break;
 	                }} else {
                     printf("\n\tSenha incorreta.\n");
