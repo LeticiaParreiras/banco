@@ -1,7 +1,7 @@
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
+#include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
+#include <cstring>
 #include "contas.h"
 
 void abrircontapoupanca() {
@@ -141,7 +141,7 @@ int excluirC(int agencia, int numdaconta) {
     Corrente contaencontrada;            
     int posicao = encontrarC(agencia, numdaconta, contaencontrada);
     if (posicao == -1) {
-        printf("Conta não encontrada.\n");
+        printf("Conta nÃ£o encontrada.\n");
         system("pause");
         return 0;
     }
@@ -161,7 +161,7 @@ int excluirP(int agencia, int numdaconta) {
     Poupanca contaencontrada;
     int posicao = encontrarP(agencia, numdaconta, contaencontrada);
     if (posicao == -1) {
-        printf("Conta não encontrada.\n");
+        printf("Conta nÃ£o encontrada.\n");
         system("pause");
         return 0;
     }
@@ -181,17 +181,17 @@ void consultarcontaC(int agencia, int numdaconta) {
     Corrente contaencontrada;
     int posicao = encontrarC(agencia, numdaconta, contaencontrada);
     if (posicao != -1) {
-        printf("Informações da conta:\n");
+        printf("InformaÃ§Ãµes da conta:\n");
         printf("\tTipo da Conta: Corrente \n");
-        printf("\tAgência: %d\n", contaencontrada.agencia);
-        printf("\tNúmero da conta: %d\n", contaencontrada.numdaconta);
+        printf("\tAgÃªncia: %d\n", contaencontrada.agencia);
+        printf("\tNÃºmero da conta: %d\n", contaencontrada.numdaconta);
         printf("\tNome: %s", contaencontrada.nome);
         printf("\tCPF: %s\n", contaencontrada.cpf);
         printf("\tLimite: %.2f\n", contaencontrada.limite);
         printf("\tData de Vencimento: %d/%d/%d\n", contaencontrada.vencimento.dia, contaencontrada.vencimento.mes, contaencontrada.vencimento.ano);
     	system("pause");
 	} else {
-        printf("Conta não encontrada.\n");
+        printf("Conta nÃ£o encontrada.\n");
         system("pause");
     }
 }
@@ -199,15 +199,15 @@ void consultarcontaP(int agencia, int numdaconta) {
     Poupanca contaencontrada;
     int posicao = encontrarP(agencia, numdaconta, contaencontrada);
     if (posicao != -1) {
-        printf("Informações da conta:\n");
+        printf("InformaÃ§Ãµes da conta:\n");
         printf("\tTipo da Conta: Poupanca\n");
-        printf("\tAgência: %d\n", contaencontrada.agencia);
-        printf("\tNúmero da conta: %d\n", contaencontrada.numdaconta);
+        printf("\tAgÃªncia: %d\n", contaencontrada.agencia);
+        printf("\tNÃºmero da conta: %d\n", contaencontrada.numdaconta);
         printf("\tNome: %s", contaencontrada.nome);
         printf("\tCPF: %s\n", contaencontrada.cpf);
         system("pause");
     } else {
-        printf("Conta não encontrada.\n");
+        printf("Conta nÃ£o encontrada.\n");
         system("pause");
     }
 }
@@ -222,16 +222,16 @@ void consultarcliente(int agencia, int numdaconta, char tipo){
             printf("\tCPF: %s\n", contaencontrada.cpf);
             printf("\tData de nascimento: %d/%d/%d\n", contaencontrada.nascimento.dia, contaencontrada.nascimento.mes, contaencontrada.nascimento.ano);
             printf("\tTelefone: %s\n", contaencontrada.telefone);
-            printf("\t**Endereço**\n");
+            printf("\t**EndereÃ§o**\n");
             printf("\tLogradouro: %s", contaencontrada.endereco.logradouro);
-            printf("\tNúmero da casa: %d", contaencontrada.endereco.numcasa);
+            printf("\tNÃºmero da casa: %d", contaencontrada.endereco.numcasa);
             printf("\tCEP: %d\n", contaencontrada.endereco.cep);
             printf("\tBairro: %s", contaencontrada.endereco.bairro);
             printf("\tCidade: %s", contaencontrada.endereco.cidade);
             printf("\tEstado: %s\n", contaencontrada.endereco.estado);
             system("pause");
         } else {
-            printf("Conta não encontrada.\n");
+            printf("Conta nÃ£o encontrada.\n");
             system("pause");
         }
     } else if (tipo == '2') {
@@ -243,20 +243,20 @@ void consultarcliente(int agencia, int numdaconta, char tipo){
             printf("\tCPF: %s\n", contaencontrada.cpf);
             printf("\tData de nascimento: %d/%d/%d\n", contaencontrada.nascimento.dia, contaencontrada.nascimento.mes, contaencontrada.nascimento.ano);
             printf("\tTelefone: %s\n", contaencontrada.telefone);
-            printf("\t**Endereço**\n");
+            printf("\t**EndereÃ§o**\n");
             printf("\tLogradouro: %s", contaencontrada.endereco.logradouro);
-            printf("\tNúmero da casa: %d\n", contaencontrada.endereco.numcasa);
+            printf("\tNÃºmero da casa: %d\n", contaencontrada.endereco.numcasa);
             printf("\tCEP: %d\n", contaencontrada.endereco.cep);
             printf("\tBairro: %s", contaencontrada.endereco.bairro);
             printf("\tCidade: %s", contaencontrada.endereco.cidade);
             printf("\tEstado: %s\n", contaencontrada.endereco.estado);
             system("pause");
         } else {
-            printf("Conta não encontrada.\n");
+            printf("Conta nÃ£o encontrada.\n");
             system("pause");
         }
     } else {
-        printf("Tipo de conta inválido.\n");
+        printf("Tipo de conta invÃ¡lido.\n");
         system("pause");
     }
 }
@@ -284,7 +284,7 @@ void alterarP(int agencia,int numdaconta){
 	    fclose(Contas);
 	    excluirP(agencia, numdaconta);
 	}else{
-		printf("Conta não encontrada");
+		printf("Conta nÃ£o encontrada");
 		system("pause");
 		}     
     }
@@ -316,7 +316,7 @@ void alterarC(int agencia, int numdaconta){
 			    fclose(Contas);
 			    excluirC(agencia,numdaconta);}
 			else{
-				printf("Conta não encontrada");
+				printf("Conta nÃ£o encontrada");
 				system("pause");
 				}
 			break;
@@ -338,7 +338,7 @@ void alterarC(int agencia, int numdaconta){
 			    printf("Conta Alterada");
 			    system("pause");
 			}else{
-				printf("Conta não encontrada");
+				printf("Conta nÃ£o encontrada");
 				system("pause");
 		}
 			break;
@@ -385,7 +385,7 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
 					system("pause");
 				}
     	}else{
-    		printf("\tConta não encontrada\n");
+    		printf("\tConta nÃ£o encontrada\n");
     		system("pause");
 		}
 	}
@@ -425,12 +425,12 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
 					system("pause");
 				}
     	}else{
-    		printf("\tConta não encontrada\n");
+    		printf("\tConta nÃ£o encontrada\n");
     		system("pause");
 		}
 	}
 	else{
-		printf("Tipo de conta inválido.\n");
+		printf("Tipo de conta invÃ¡lido.\n");
         system("pause");
 	}
 }
