@@ -196,7 +196,8 @@ void menufuncionario() {
 			            }
 			            break;
 			        case '2':
-			           	printf("Alterar Dados de Funcionario selecionada\n");
+			        	system("cls");
+			           	printf("\tAlterar Dados de Funcionario selecionada\n");
 			           	printf("\tInforme o codigo do funcionario: ");
 			           	scanf("%d",&acodigo);
 			           	alterarF(acodigo);
