@@ -154,9 +154,10 @@ void consultarF(int codigo){
 		printf("\n\tCodigo: %d\n",encontrado.codigo);
 		printf("\tCargo: %s",encontrado.cargo);
 		printf("\tNome: %s",encontrado.nome);
-		printf("\tCPF: %s\n",encontrado.cpf);
+		printf("\tCPF: %s",encontrado.cpf);
 		printf("\tData nascimento: %d/%d/%d\n",encontrado.nascimento.dia,encontrado.nascimento.mes,encontrado.nascimento.ano);
-		printf("\tTelefone: %s\n",encontrado.telefone);
+		printf("\tTelefone: %s",encontrado.telefone);
+		printf("\t**ENDEREÇO**\n");
 		printf("\tLogaduro: %s",encontrado.endereco.logradouro);
 		printf("\tNumero da casa: %d\n",encontrado.endereco.numcasa);
 		printf("\tCEP: %d\n",encontrado.endereco.cep);
