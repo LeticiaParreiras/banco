@@ -86,7 +86,6 @@ void abrircontacorrente() {
     fgets(contacorrente.endereco.bairro, sizeof(contacorrente.endereco.bairro), stdin);    
 	printf("Informe o numero da casa: ");
     scanf("%d", &contacorrente.endereco.numcasa);
-
     FILE* Contas = fopen("contacorrente.bin", "ab");
     if (Contas == NULL) {
         printf("Houve algum erro na hora de salvar os dados\n");
@@ -96,7 +95,6 @@ void abrircontacorrente() {
     fclose(Contas);
     system("cls");
 }
-
 
 int encontrarC(int agencia, int numconta, Corrente &contaencontrada) {
     FILE* arquivocontas = fopen("contacorrente.bin", "rb");
@@ -382,10 +380,12 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
 				}else{
 					printf("\n\thouve algum erro\n");
 					system("pause");
+					return;
 				}
     	}else{
     		printf("\tConta não encontrada\n");
     		system("pause");
+    		return;
 		}
 	}
 	if(tipo == '2'){
@@ -414,7 +414,7 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
     	if (excluirC(agencia, numdaconta)==1){
     	FILE* Contas = fopen("contacorrente.bin", "ab");
 			    if (Contas == NULL) {
-			        printf("Houve algum erro na hora de salvar os dados\n");
+			        printf("Houve algum erro\n");
 			        return;
 			    }
 			    fwrite(&contaencontrada, sizeof(Corrente), 1, Contas);
@@ -422,9 +422,11 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
 				}else{
 					printf("\n\thouve algum erro\n");
 					system("pause");
+					return;
 				}
     	}else{
     		printf("\tConta não encontrada\n");
     		system("pause");}
+    		return;
 	}
 	}
