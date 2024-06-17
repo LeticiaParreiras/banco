@@ -141,6 +141,7 @@ void menufuncionario() {
                         printf("\tInforme o tipo da conta\n");
                         printf("\t[1] - Conta Poupanca\n");
                         printf("\t[2] - Conta Corrente\n");
+                        printf("\tEscolha uma opcao: ");
                         fflush(stdin);
                         tipo = getch();
                         system("cls");
@@ -167,9 +168,11 @@ void menufuncionario() {
 			    opcao2 = getch();
 			    switch (opcao2) {
 			        case '1':
-			            printf("\tInforme o tipo da conta\n");
+			        	system("cls");
+			            printf("\n\tInforme o tipo da conta\n");
 			            printf("\t[1] - Conta Poupanca\n");
 			            printf("\t[2] - Conta Corrente\n");
+			            printf("\tEscolha uma opcao: ");
 			            fflush(stdin);
 			            tipo = getch();
 			            switch (tipo) {
@@ -200,11 +203,12 @@ void menufuncionario() {
 			           	system("cls");
 			           	break;
 			        case '3':
+			        	system("cls");
 			           	printf("Alterar Dados selecionada\n");
-			           	system("cls");
                         printf("\tInforme o tipo da conta\n");
                         printf("\t[1] - Conta Poupanca\n");
                         printf("\t[2] - Conta Corrente\n");
+                        printf("\tEscolha uma opcao: ");
                         fflush(stdin);
                         tipo = getch();
                         system("cls");
@@ -254,4 +258,3 @@ void menucliente() {
     printf("Funcao abrir cliente nao implementada.\n");
     system("pause");
 }
-
