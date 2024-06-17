@@ -170,11 +170,11 @@ int excluirP(int agencia, int numdaconta) {
         printf("Erro ao abrir o arquivo.\n");
         return 0;
     }
-
     Poupanca contanull = {0};
     fseek(arquivocontas, posicao * sizeof(Poupanca), SEEK_SET);
     fwrite(&contanull, sizeof(Poupanca), 1, arquivocontas);
     fclose(arquivocontas);
+    return 1;
 }
 
 void consultarcontaC(int agencia, int numdaconta) {
@@ -255,11 +255,7 @@ void consultarcliente(int agencia, int numdaconta, char tipo){
             printf("Conta não encontrada.\n");
             system("pause");
         }
-    } else {
-        printf("Tipo de conta inválido.\n");
-        system("pause");
-    }
-}
+}}
 void alterarP(int agencia,int numdaconta){
     Poupanca contaencontrada;
     int posicao = encontrarP(agencia, numdaconta, contaencontrada);
@@ -342,13 +338,16 @@ void alterarC(int agencia, int numdaconta){
 				system("pause");
 		}
 			break;
-		}
-			
-	}
-	
+		}		
+	}	
 }
 void alterarcliente(int agencia,int numdaconta,int tipo){
 	int posicao;
+	if(tipo != '1'&& tipo!='2')
+	{
+		printf("Opção invalida");
+		return;
+	}
 	if(tipo == '1'){
 		Poupanca contaencontrada;
         posicao = encontrarP(agencia, numdaconta, contaencontrada);	
@@ -375,7 +374,7 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
     	if (excluirP(agencia, numdaconta)==1){
     	FILE* Contas = fopen("contapoupanca.bin", "ab");
 			    if (Contas == NULL) {
-			        printf("Houve algum erro na hora de salvar os dados\n");
+			        printf("Houve algum erro\n");
 			        return;
 			    }
 			    fwrite(&contaencontrada, sizeof(Poupanca), 1, Contas);
@@ -426,12 +425,6 @@ void alterarcliente(int agencia,int numdaconta,int tipo){
 				}
     	}else{
     		printf("\tConta não encontrada\n");
-    		system("pause");
-		}
+    		system("pause");}
 	}
-	else{
-		printf("Tipo de conta inválido.\n");
-        system("pause");
 	}
-}
-
